@@ -28,3 +28,15 @@ let pokemon3 = {
 }
 
 pokemonlist.push(pokemon3);
+
+
+for (let i = 0; i < pokemonlist.length; ++i) {
+    console.log(pokemonlist[i].name);
+    if (pokemonlist[i].type.length === 2) {
+        document.write(` That Pokemons Name is ${pokemonlist[i].name} .Its height is ${pokemonlist[i].height}. It has two Types ! <br>`);
+    } else if (pokemonlist[i].type.length === 1) {
+        document.write(` That Pokemons Name is ${pokemonlist[i].name} .Its height is ${pokemonlist[i].height}. It has one Type ! <br>`);
+    } else {
+        document.write('A Pokemon can only have 1 or 2 Types !')
+    }
+}
