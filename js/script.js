@@ -30,13 +30,31 @@ let pokemon3 = {
 pokemonlist.push(pokemon3);
 
 
+let checkheight = function (height) {
+    if (height >= 1.6) {
+        return 'Wow, thats big!';
+    } else {
+        return '';
+    }
+
+}
+
 for (let i = 0; i < pokemonlist.length; ++i) {
     console.log(pokemonlist[i].name);
     if (pokemonlist[i].type.length === 2) {
-        document.write(` That Pokemons Name is ${pokemonlist[i].name} .Its height is ${pokemonlist[i].height}. It has two Types ! <br>`);
+        document.write(` That Pokemons Name is ${pokemonlist[i].name} .Its height is ${pokemonlist[i].height}. ${checkheight(pokemonlist[i].height)} It has two Types ! <br>`);
     } else if (pokemonlist[i].type.length === 1) {
-        document.write(` That Pokemons Name is ${pokemonlist[i].name} .Its height is ${pokemonlist[i].height}. It has one Type ! <br>`);
+        document.write(` That Pokemons Name is ${pokemonlist[i].name} .Its height is ${pokemonlist[i].height}. ${checkheight(pokemonlist[i].height)} It has one Type ! <br>`);
     } else {
         document.write('A Pokemon can only have 1 or 2 Types !')
     }
+
+
+
+
+
+
+
+
+
 }
