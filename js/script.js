@@ -40,7 +40,7 @@ let checkheight = function (height) {
 
 }
 
-// Looping trough the Pokemonlist. 
+// Looping trough the Pokemonlist. It will write the Name and  the height of the Pokemons, while also Comment on the height via the function and also how many Types it has
 
 for (let i = 0; i < pokemonlist.length; ++i) {
     console.log(pokemonlist[i].name);
