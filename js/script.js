@@ -30,15 +30,9 @@ let pokemon3 = {
 pokemonlist.push(pokemon3);
 
 //   Function to that adds a Comments based on the Pokemons height
+let checkheight = (height) => height >= 1.6 ? 'Wow thats big! ' : '';
 
-let checkheight = function (height) {
-    if (height >= 1.6) {
-        return 'Wow, thats big! ';
-    } else {
-        return '';
-    }
 
-}
 //   Function to that adds a Comments based on the Pokemons type
 let checktype = function (type) {
     if (type.length === 2) {
