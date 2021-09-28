@@ -48,17 +48,11 @@ let checktype = function (type) {
 // Looping trough the Pokemonlist. It will write the Name and  the height of the Pokemons, while also Comment on the height via the function and also how many Types it has
 
 
-let printList = function (list) {
-    for (let i = 0; i < list.length; ++i) {
-        console.log(list[i].name);
-        document.write(`That Pokemon´s Name is ${list[i].name}! 
-        Its height is ${list[i].height}.
-        ${checkheight(list[i].height)} 
-        ${checktype(list[i].type)} <br>`)
+pokemonlist.forEach((property) => {
+    console.log(property.name)
+    document.write(`That Pokemon´s Name is ${property.name}! 
+    Its height is ${property.height}.
+    ${checkheight(property.height)} 
+    ${checktype(property.type)} <br>`)
+});
 
-
-    }
-
-}
-
-printList(pokemonlist);
