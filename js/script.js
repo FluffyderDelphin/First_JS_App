@@ -1,5 +1,5 @@
 "use strict";
-let pokemonlist = [];
+
 
 let pokemon1 = {
     name: 'Scizor',
@@ -8,17 +8,11 @@ let pokemon1 = {
 
 }
 
-pokemonlist.push(pokemon1);
-
 let pokemon2 = {
     name: 'Garchomp',
     type: ['Dragon', 'Ground'],
     height: 1.9
-
 }
-
-pokemonlist.push(pokemon2);
-
 
 let pokemon3 = {
     name: 'Darkrai',
@@ -26,8 +20,23 @@ let pokemon3 = {
     height: 1.5
 
 }
+let pokemon_reposetory = (function () {
+    let pokemonlist = [];
 
-pokemonlist.push(pokemon3);
+    return {
+        add: function (pokemon) {
+            pokemonlist.push(pokemon)
+        },
+        getALL: function () {
+            return pokemonlist;
+        }
+
+    }
+})();
+
+pokemon_reposetory.add(pokemon1);
+pokemon_reposetory.add(pokemon2);
+pokemon_reposetory.add(pokemon3);
 
 //   Function to that adds a Comments based on the Pokemons height
 let checkheight = (height) => height >= 1.6 ? 'Wow thats big! ' : '';
@@ -48,7 +57,7 @@ let checktype = function (type) {
 // Looping trough the Pokemonlist. It will write the Name and  the height of the Pokemons, while also Comment on the height via the function and also how many Types it has
 
 
-pokemonlist.forEach((property) => {
+pokemon_reposetory.getALL().forEach((property) => {
     console.log(property.name)
     document.write(`That Pokemon´s Name is ${property.name}! 
     Its height is ${property.height}.
