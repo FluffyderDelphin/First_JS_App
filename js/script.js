@@ -63,22 +63,39 @@ let checktype = function (type) {
 let pokemon_reposetory = (function () {
     let pokemonlist = [];
 
-    return {
-        add: function (pokemon) {
-            if (checkObject(pokemon)
-                && checktype(pokemon.type)
-                && checkheight(pokemon.height)) {
-                pokemonlist.push(pokemon)
-            } else {
-                console.log('Invalid Input')
-            }
-        },
-        getALL: function () {
-            return pokemonlist;
-        }
 
+    function add(pokemon) {
+        if (checkObject(pokemon)
+            && checktype(pokemon.type)
+            && checkheight(pokemon.height)) {
+            pokemonlist.push(pokemon)
+        } else {
+            console.log('Invalid Input')
+        }
     }
+    function getALL() {
+        return pokemonlist;
+    }
+
+    return {
+        add: add,
+        getALL: getALL
+    }
+
+
 })();
+
+// let checkALL = function (pkobj) {
+//     if (checkObject(pokemon)
+//         && checktype(pokemon.type)
+//         && checkheight(pokemon.height)) {
+//         pokemon_reposetory.add(pkobj);
+//     } else {
+//         console.log('Invalid Input');
+
+//     }
+
+// }
 
 pokemon_reposetory.add(pokemon1);
 pokemon_reposetory.add(pokemon2);
