@@ -25,7 +25,11 @@ let pokemon_reposetory = (function () {
 
     return {
         add: function (pokemon) {
-            pokemonlist.push(pokemon)
+            if (typeof pokemon === 'object' && Object.keys(pokemon) === ['name', 'type', 'height']) {
+                pokemonlist.push(pokemon)
+            } else {
+                console.log('Invalid Input')
+            }
         },
         getALL: function () {
             return pokemonlist;
@@ -65,3 +69,5 @@ pokemon_reposetory.getALL().forEach((property) => {
     ${checktype(property.type)} <br>`)
 });
 
+
+console.log(Object.keys(pokemon1));
