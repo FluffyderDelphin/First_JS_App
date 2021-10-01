@@ -69,7 +69,8 @@ let pokemon_reposetory = (function () {
             && checktype(pokemon.type)
             && checkheight(pokemon.height)) {
             pokemonlist.push(pokemon)
-        } else {
+        }
+        else {
             console.log('Invalid Input')
         }
     }
@@ -86,9 +87,9 @@ let pokemon_reposetory = (function () {
 })();
 
 // let checkALL = function (pkobj) {
-//     if (checkObject(pokemon)
-//         && checktype(pokemon.type)
-//         && checkheight(pokemon.height)) {
+//     if (checkObject(pkobj)
+//         && checktype(pkobj.type)
+//         && checkheight(pkobj.height)) {
 //         pokemon_reposetory.add(pkobj);
 //     } else {
 //         console.log('Invalid Input');
