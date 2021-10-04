@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 ul{
     list-style: none;
@@ -9,10 +11,30 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Roboto', sans-serif;
     
 }
 
+.container{
+    background-color: rgb(255, 181, 168);
+    width: 500px;
+  
 
+}
+
+.pokemon-list{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+}
 .pokemonButton{
+    font-size: 1.5rem;
     border: none;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 15px 0;
 }
