@@ -79,11 +79,20 @@ let pokemon_reposetory = (function () {
     //  Prints the Information about the Pokemon to the html Document
 
     function printPokemon(pokemon) {
-        console.log(pokemon.name)
-        document.write(`That Pokemon´s Name is ${pokemon.name}! 
-        Its height is ${pokemon.height} m.
-        ${checkheight(pokemon.height)} 
-        ${checktype(pokemon.type)} <br>`)
+        console.log(pokemon.name);
+        let ulpokemonlist = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.classList.add('pokemonButton');
+        ulpokemonlist.appendChild(listItem);
+        listItem.appendChild(button);
+        button.innerText = pokemon.name;
+
+
+        // document.write(`That Pokemon´s Name is ${pokemon.name}! 
+        // Its height is ${pokemon.height} m.
+        // ${checkheight(pokemon.height)} 
+        // ${checktype(pokemon.type)} <br>`)
     }
 
     return {
@@ -105,5 +114,6 @@ pokemon_reposetory.add({ name: 'Pikachu', type: ['electro'], height: 0.5 });
 // Looping trough the Pokemonlist. 
 
 pokemon_reposetory.getALL().forEach((pokemon) => {
+
     pokemon_reposetory.printPokemon(pokemon);
 });
