@@ -79,7 +79,7 @@ let pokemon_reposetory = (function () {
     //  Prints the Information about the Pokemon to the html Document
 
     function printPokemon(pokemon) {
-        console.log(pokemon.name);
+
         let ulpokemonlist = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
         let button = document.createElement('button');
@@ -88,11 +88,19 @@ let pokemon_reposetory = (function () {
         listItem.appendChild(button);
         button.innerText = pokemon.name;
 
+        button.addEventListener('click', showDetails);
+
 
         // document.write(`That Pokemon´s Name is ${pokemon.name}! 
         // Its height is ${pokemon.height} m.
         // ${checkheight(pokemon.height)} 
         // ${checktype(pokemon.type)} <br>`)
+    }
+
+    // Prints Pokemon Details to the Console 
+
+    function showDetails(pokemon) {
+        console.log(pokemon.name);
     }
 
     return {
@@ -109,6 +117,7 @@ pokemon_reposetory.add(pokemon1);
 pokemon_reposetory.add(pokemon2);
 pokemon_reposetory.add(pokemon3);
 pokemon_reposetory.add({ name: 'Pikachu', type: ['electro'], height: 0.5 });
+pokemon_reposetory.add({ name: 'Blaiziken', type: ['fire', 'fighting'], height: 1.5 });
 
 
 // Looping trough the Pokemonlist. 
