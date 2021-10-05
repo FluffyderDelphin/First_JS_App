@@ -78,7 +78,7 @@ let pokemon_reposetory = (function () {
     }
     //  Prints the Information about the Pokemon to the html Document
 
-    function printPokemon(pokemon) {
+    function addListItem(pokemon) {
 
         let ulpokemonlist = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
@@ -88,7 +88,9 @@ let pokemon_reposetory = (function () {
         listItem.appendChild(button);
         button.innerText = pokemon.name;
 
-        button.addEventListener('click', showDetails);
+        button.addEventListener('click', function () {
+            showDetails(pokemon);
+        });
 
 
         // document.write(`That Pokemon´s Name is ${pokemon.name}! 
@@ -106,7 +108,7 @@ let pokemon_reposetory = (function () {
     return {
         add: add,
         getALL: getALL,
-        printPokemon: printPokemon
+        addListItem: addListItem
     }
 
 
@@ -124,5 +126,5 @@ pokemon_reposetory.add({ name: 'Blaiziken', type: ['fire', 'fighting'], height: 
 
 pokemon_reposetory.getALL().forEach((pokemon) => {
 
-    pokemon_reposetory.printPokemon(pokemon);
+    pokemon_reposetory.addListItem(pokemon);
 });
