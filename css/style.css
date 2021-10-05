@@ -63,3 +63,8 @@ h1{
     border-radius: 10px;
 }
 
+.pokemonButton:hover,
+.pokemonButton:active{
+    background-color: rgba(54, 29, 29, 0.589);
+}
+
