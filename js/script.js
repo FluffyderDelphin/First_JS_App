@@ -7,8 +7,8 @@ let pokemon_reposetory = (function () {
 
 
     function loadlist() {
-        return fetch(apiUrl).then(function (pokemon) {
-            return pokemon.json();
+        return fetch(apiUrl).then(function (response) {
+            return response.json();
         }).then(function (json) {
             json.results.forEach(function (item) {
                 let pokemon = {
@@ -23,8 +23,17 @@ let pokemon_reposetory = (function () {
 
     }
 
-    function loadDetails() {
-
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (details) {
+            item.imageUlr = details.sprites.font_default;
+            item.height = details.height;
+            item.types = details.types;
+        }).catch(function (e) {
+            console.error(e);
+        })
     }
 
     //  Functions Checks if Pokemon Object is valid
@@ -76,7 +85,7 @@ let pokemon_reposetory = (function () {
     //     }
     // }
 
-
+    // temporary simple add function 
     function add(pokemon) {
         pokemonlist.push(pokemon);
     }
@@ -109,14 +118,18 @@ let pokemon_reposetory = (function () {
     // Prints Pokemon Details to the Console 
 
     function showDetails(pokemon) {
-        console.log(pokemon.name);
+        loadDetails(pokemon).then(function () {
+            console.log(pokemon);
+        })
+
     }
 
     return {
         add: add,
         getALL: getALL,
         addListItem: addListItem,
-        loadlist: loadlist
+        loadlist: loadlist,
+        loadDetails: loadDetails
     }
 
 
