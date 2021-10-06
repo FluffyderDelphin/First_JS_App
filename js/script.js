@@ -1,27 +1,6 @@
 "use strict";
 
 
-let pokemon1 = {
-    name: 'Scizor',
-    type: ['Steel', 'Bug'],
-    height: 1.8
-
-}
-
-let pokemon2 = {
-    name: 'Garchomp',
-    type: ['Dragon', 'Ground'],
-    height: 1.9
-}
-
-let pokemon3 = {
-    name: 'Darkrai',
-    type: ['Dark'],
-    height: 1.5
-
-}
-
-
 let pokemon_reposetory = (function () {
     let pokemonlist = [];
 
@@ -114,12 +93,6 @@ let pokemon_reposetory = (function () {
 
 })();
 
-
-pokemon_reposetory.add(pokemon1);
-pokemon_reposetory.add(pokemon2);
-pokemon_reposetory.add(pokemon3);
-pokemon_reposetory.add({ name: 'Pikachu', type: ['electro'], height: 0.5 });
-pokemon_reposetory.add({ name: 'Blaiziken', type: ['fire', 'fighting'], height: 1.5 });
 
 
 // Looping trough the Pokemonlist. 
