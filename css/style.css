@@ -21,6 +21,7 @@ h1{
     font-size: 2.2rem;
     margin-bottom: 20px;
     font-weight: 600;
+
 }
 .container{
     display: flex;
@@ -28,6 +29,8 @@ h1{
     align-items: center;
     background-color: rgb(184, 66, 66);
     /* width: 500px; */
+
+
   
 
 }
@@ -40,8 +43,6 @@ h1{
     justify-content: space-around;
     align-items: center;
     margin: 10px 70px;
-  
-
 }
 
 
@@ -54,7 +55,7 @@ h1{
 .pokemonButton{
     font-family: 'Orbitron', sans-serif;
     background-color: rgba(44, 34, 34, 0.404);
-    color: #fff;
+    color: rgb(255, 230, 88);
     font-size: 1.5rem;
     border: none;
     width: 100%;
