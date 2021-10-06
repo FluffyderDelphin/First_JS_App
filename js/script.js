@@ -3,6 +3,29 @@
 
 let pokemon_reposetory = (function () {
     let pokemonlist = [];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20';
+
+
+    function loadlist() {
+        return fetch(apiUrl).then(function (pokemon) {
+            return pokemon.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+            })
+        }).catch(function (e) {
+            console.error(e);
+        })
+
+    }
+
+    function loadDetails() {
+
+    }
 
     //  Functions Checks if Pokemon Object is valid
     function checkObject(pkobj) {
@@ -41,16 +64,21 @@ let pokemon_reposetory = (function () {
     }
 
 
+    // function add(pokemon) {
+    //     if (checkObject(pokemon)
+    //         && checktype(pokemon.type)
+    //         && checkheight(pokemon.height)
+    //     ) {
+    //         pokemonlist.push(pokemon)
+    //     }
+    //     else {
+    //         console.log('Invalid Input')
+    //     }
+    // }
+
+
     function add(pokemon) {
-        if (checkObject(pokemon)
-            && checktype(pokemon.type)
-            && checkheight(pokemon.height)
-        ) {
-            pokemonlist.push(pokemon)
-        }
-        else {
-            console.log('Invalid Input')
-        }
+        pokemonlist.push(pokemon);
     }
     function getALL() {
         return pokemonlist;
@@ -87,13 +115,18 @@ let pokemon_reposetory = (function () {
     return {
         add: add,
         getALL: getALL,
-        addListItem: addListItem
+        addListItem: addListItem,
+        loadlist: loadlist
     }
 
 
 })();
 
-
+pokemon_reposetory.loadlist().then(function () {
+    pokemon_reposetory.getALL().forEach(function (pokemon) {
+        pokemon_reposetory.addListItem(pokemon);
+    });
+});
 
 // Looping trough the Pokemonlist. 
 
