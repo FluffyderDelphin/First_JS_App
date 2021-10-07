@@ -8,11 +8,11 @@ let pokemon_reposetory = (function () {
     function showLoadingMessage() {
         document.querySelector('.message').classList.remove('hidden');
     }
+
     function hideLoadingMessage() {
-        setTimeout(function () {
-            document.querySelector('.message').classList.add('hidden');
-        }, 2000)
+        document.querySelector('.message').classList.add('hidden');
     }
+
     function loadlist() {
         showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
