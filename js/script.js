@@ -31,7 +31,6 @@ let pokemon_reposetory = (function () {
         })
 
     }
-
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
