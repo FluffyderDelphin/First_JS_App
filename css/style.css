@@ -68,3 +68,28 @@ h1{
     background-color: rgba(54, 29, 29, 0.589);
 }
 
+.message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(255, 230, 88);
+    font-size: 2rem;
+}
+
+.loader {
+    margin-top: 15px;
+    border: 10px solid rgba(54, 29, 29, 0.589);
+    border-top: 10px solid rgb(255, 230, 88);
+    border-radius: 50%;
+    width: 60px;
+    height:60px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

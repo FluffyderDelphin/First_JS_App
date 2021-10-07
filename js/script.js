@@ -5,8 +5,14 @@ let pokemon_reposetory = (function () {
     let pokemonlist = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+    function showLoadingMessage() {
+    }
+    function hideLoadingMessage() {
+
+    }
 
     function loadlist() {
+        // showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
             return response.json();
         }).then(function (json) {
