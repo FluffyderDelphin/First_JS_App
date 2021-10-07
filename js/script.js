@@ -9,9 +9,10 @@ let pokemon_reposetory = (function () {
         document.querySelector('.message').classList.remove('hidden');
     }
     function hideLoadingMessage() {
-        document.querySelector('.message').classList.add('hidden');
+        setTimeout(function () {
+            document.querySelector('.message').classList.add('hidden');
+        }, 2000)
     }
-
     function loadlist() {
         showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
@@ -36,7 +37,7 @@ let pokemon_reposetory = (function () {
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function (details) {
-            item.imageUlr = details.sprites.front_default;
+            item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
         }).catch(function (e) {
