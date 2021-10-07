@@ -151,7 +151,7 @@ pokemon_reposetory.loadlist().then(function () {
 
 // Looping trough the Pokemonlist. 
 
-pokemon_reposetory.getALL().forEach((pokemon) => {
+// pokemon_reposetory.getALL().forEach((pokemon) => {
 
-    pokemon_reposetory.addListItem(pokemon);
-});
+//     pokemon_reposetory.addListItem(pokemon);
+// });
