@@ -36,7 +36,7 @@ let pokemon_reposetory = (function () {
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function (details) {
-            item.imageUlr = details.sprites.font_default;
+            item.imageUlr = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
         }).catch(function (e) {
