@@ -6,16 +6,18 @@ let pokemon_reposetory = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     function showLoadingMessage() {
+        document.querySelector('.message').classList.remove('hidden');
     }
     function hideLoadingMessage() {
-
+        document.querySelector('.message').classList.add('hidden');
     }
 
     function loadlist() {
-        // showLoadingMessage();
+        showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
             return response.json();
         }).then(function (json) {
+            hideLoadingMessage();
             json.results.forEach(function (item) {
                 let pokemon = {
                     name: item.name,
@@ -25,6 +27,7 @@ let pokemon_reposetory = (function () {
             })
         }).catch(function (e) {
             console.error(e);
+            hideLoadingMessage();
         })
 
     }
