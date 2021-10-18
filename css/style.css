@@ -107,7 +107,13 @@ h1{
 .hidden{
    display: none;
 }
+.visible{
+    display: block;
+}
+
  /* Modal Styling */
+
+
 .modal-container{
     background-color: rgba(0, 0, 0, 0.425);
     position:fixed;
@@ -118,6 +124,9 @@ h1{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.modal-container.hidden{
+    display: none;
 
 }
 
@@ -127,6 +136,8 @@ h1{
     height: 60%;
     box-shadow: 0 5px 8px 0 rgb(0, 0, 0,0.2);
     border-radius: 20px;
+ 
+
  
    
     
@@ -154,4 +165,20 @@ h1{
     font-size: 22px;
     padding: 0 28px;
     margin-top: 28px;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .modal-container{
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .modal-content{
+        margin: 0;
+        width: 80%;
+        height: 50%
+        
+    }
 }
