@@ -107,3 +107,49 @@ h1{
 .hidden{
    display: none;
 }
+
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.425);
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.modal-content{
+    background-color: rgb(255, 255, 255);
+    width: 50%;
+    height: 60%;
+    box-shadow: 0 5px 8px 0 rgb(0, 0, 0,0.2);
+    border-radius: 20px;
+ 
+   
+    
+}
+.modal-header{
+    background-color: rgb(184, 66, 66);
+    color: rgb(255, 230, 88);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 28px;
+    font-size: 25px;
+    border-radius: 20px 20px 0 0;
+
+}
+.modal-close{
+    color: rgb(255, 230, 88);
+    border: none;
+    background: none;
+    font-size: 30px;
+}
+
+.modal-details{
+    padding: 0 28px;
+    margin-top: 28px;
+}
