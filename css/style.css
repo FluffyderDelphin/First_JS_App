@@ -107,7 +107,7 @@ h1{
 .hidden{
    display: none;
 }
-
+ /* Modal Styling */
 .modal-container{
     background-color: rgba(0, 0, 0, 0.425);
     position:fixed;
@@ -143,6 +143,7 @@ h1{
 
 }
 .modal-close{
+    cursor: pointer;
     color: rgb(255, 230, 88);
     border: none;
     background: none;
@@ -150,6 +151,7 @@ h1{
 }
 
 .modal-details{
+    font-size: 22px;
     padding: 0 28px;
     margin-top: 28px;
 }
