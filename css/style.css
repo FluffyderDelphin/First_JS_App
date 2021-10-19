@@ -176,7 +176,7 @@ h1{
    justify-content: flex-start;
 }
 .detail-list li{
-    padding: 8px;
+    padding: 8px 12px;
     border: 4px double;
 }
 

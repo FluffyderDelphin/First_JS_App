@@ -130,14 +130,23 @@ let pokemon_reposetory = (function () {
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            document.querySelector(".modal-container").classList.remove("hidden");
+            let modal = document.querySelector(".modal-container");
+            modal.classList.remove("hidden");
             document.querySelector(".pokemon-name").innerText = pokemon.name;
             document.querySelector(".pokemon-height").innerText = pokemon.height;
             document.querySelector(".pokemon-image").src = pokemon.imageUrl;
 
+            let close = document.querySelector(".modal-close");
+            close.addEventListener('click', hideDetails);
+
+
+
             console.log(pokemon);
         })
 
+    }
+    function hideDetails() {
+        document.querySelector(".modal-container").classList.add("hidden");
     }
 
     return {
