@@ -113,6 +113,8 @@ let pokemon_reposetory = (function () {
         listItem.appendChild(button);
         button.innerText = pokemon.name;
 
+        // Event Listner for the Details 
+
         button.addEventListener('click', function () {
             showDetails(pokemon);
         });
@@ -128,6 +130,11 @@ let pokemon_reposetory = (function () {
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
+            document.querySelector(".modal-container").classList.remove("hidden");
+            document.querySelector(".pokemon-name").innerText = pokemon.name;
+            document.querySelector(".pokemon-height").innerText = pokemon.height;
+            document.querySelector(".pokemon-image").src = pokemon.imageUrl;
+
             console.log(pokemon);
         })
 
