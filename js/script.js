@@ -135,7 +135,7 @@ let pokemon_reposetory = (function () {
 
 
             let pokemonName = capitalizeName(pokemon.name);
-
+            document.querySelector('body').classList.add('modal-open');
             document.querySelector(".pokemon-name").innerText = pokemonName;
             document.querySelector(".pokemon-height").innerText = pokemon.height;
             document.querySelector(".pokemon-image").src = pokemon.imageUrl;
@@ -163,6 +163,7 @@ let pokemon_reposetory = (function () {
     }
     function hideDetails() {
         document.querySelector(".modal-container").classList.add("hidden");
+        document.querySelector('body').classList.remove('modal-open');
     }
 
     function capitalizeName(name) {

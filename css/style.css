@@ -183,10 +183,15 @@ h1{
 .pokemon-image{
     margin-right: 40px;
     border: 4px double;
-   max-width: 100%;
+    width: 300px;
+    max-width: 100%;
+}
+body.modal-open{
+    overflow: hidden;
+    height: 100vh;
 }
 
-@media only screen and (max-width: 900px) and (orientation : landscape) {
+@media only screen and (max-width: 768px) {
     .pokedex{
         width: 100%;
     }
@@ -202,7 +207,6 @@ h1{
     .modal-content{
         margin: 0;
         width: 80%;
-        height: 90%;
         overflow:scroll;
         
     }
@@ -229,5 +233,22 @@ h1{
 
     .pokemon-image{
         width: 250px;
+    }
+}
+
+@media only screen 
+and (max-width : 900px) 
+and (orientation : landscape) {
+    .modal-content{
+        overflow: scroll;
+    }
+
+    .modal-details{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-size: 22px;
+        padding: 0 28px;
+        margin: 100px 0;
     }
 }
