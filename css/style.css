@@ -133,7 +133,6 @@ h1{
 .modal-content{
     background-color: rgb(255, 255, 255);
     width: 50%;
-    height: 60%;
     box-shadow: 0 5px 8px 0 rgb(0, 0, 0,0.2);
     border-radius: 20px;
  
@@ -168,6 +167,7 @@ h1{
     font-size: 22px;
     padding: 0 28px;
     margin-top: 100px;
+    margin-bottom: 70px;
  
 }
 .detail-list {
@@ -183,7 +183,7 @@ h1{
 .pokemon-image{
     margin-right: 40px;
     border: 4px double;
-    width: 300px;
+   max-width: 100%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -202,7 +202,8 @@ h1{
     .modal-content{
         margin: 0;
         width: 80%;
-        height: 90%
+        height: 90%;
+        overflow:scroll;
         
     }
 
