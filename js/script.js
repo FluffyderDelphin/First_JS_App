@@ -139,6 +139,18 @@ let pokemon_reposetory = (function () {
             let close = document.querySelector(".modal-close");
             close.addEventListener('click', hideDetails);
 
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    hideDetails();
+                }
+            })
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideDetails();
+                }
+            })
+
 
 
             console.log(pokemon);
