@@ -186,7 +186,7 @@ h1{
    max-width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) and (orientation : landscape) {
     .pokedex{
         width: 100%;
     }
