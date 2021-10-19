@@ -205,4 +205,28 @@ h1{
         height: 90%
         
     }
+
+    .modal-details{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .detail-list {
+        margin-top: 30px;
+     }
+
+     .detail-list li{
+        margin-top: 15px;
+     }
+
+    .pokemon-image{
+        margin-right: 0;
+        border: 4px double;
+        width: 300px;
+    }
+
+    .pokemon-image{
+        width: 250px;
+    }
 }
