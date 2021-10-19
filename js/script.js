@@ -111,7 +111,7 @@ let pokemon_reposetory = (function () {
         button.classList.add('pokemonButton');
         ulpokemonlist.appendChild(listItem);
         listItem.appendChild(button);
-        button.innerText = pokemon.name;
+        button.innerText = capitalizeName(pokemon.name);
 
         // Event Listner for the Details 
 
@@ -132,7 +132,11 @@ let pokemon_reposetory = (function () {
         loadDetails(pokemon).then(function () {
             let modal = document.querySelector(".modal-container");
             modal.classList.remove("hidden");
-            document.querySelector(".pokemon-name").innerText = pokemon.name;
+
+
+            let pokemonName = capitalizeName(pokemon.name);
+
+            document.querySelector(".pokemon-name").innerText = pokemonName;
             document.querySelector(".pokemon-height").innerText = pokemon.height;
             document.querySelector(".pokemon-image").src = pokemon.imageUrl;
 
@@ -159,6 +163,12 @@ let pokemon_reposetory = (function () {
     }
     function hideDetails() {
         document.querySelector(".modal-container").classList.add("hidden");
+    }
+
+    function capitalizeName(name) {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+
+
     }
 
     return {
