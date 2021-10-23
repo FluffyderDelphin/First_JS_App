@@ -21,10 +21,25 @@
             </div>
             <ul class="pokemon-list"></ul>
         </div>
-
     </main>
-    <script src="js/fetch.umd.js"></script>
+
+    <div class="modal-container hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Details :</h2>
+                <button class="modal-close">X</button>
+            </div>
+            <div class="modal-details">
+                <img src="" class="pokemon-image">
+                <ul class="detail-list">
+                    <li>Name: <span class="pokemon-name"></span></li>
+                    <li>Height: <span class="pokemon-height"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <script src="js/polyfill.min.js"></script>
+    <script src="js/fetch.umd.js"></script>
     <script src="js/script.js"></script>
 </body>
 
