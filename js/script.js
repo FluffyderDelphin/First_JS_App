@@ -107,8 +107,11 @@ let pokemon_reposetory = (function () {
 
         let ulpokemonlist = document.querySelector('.pokemon-list');
         let listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
         let button = document.createElement('button');
         button.classList.add('pokemonButton');
+        button.classList.add('btn');
+        button.classList.add('btn-primary');
         ulpokemonlist.appendChild(listItem);
         listItem.appendChild(button);
         button.innerText = capitalizeName(pokemon.name);
