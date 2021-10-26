@@ -45,54 +45,8 @@ let pokemon_reposetory = (function () {
         })
     }
 
-    //  Functions Checks if Pokemon Object is valid
-    function checkObject(pkobj) {
-        if (typeof pkobj === 'object'
-            && Object.keys(pkobj).includes('name')
-            && Object.keys(pkobj).includes('type')
-            && Object.keys(pkobj).includes('height')
-        ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    //   Function to that adds a Comments based on the Pokemons height
-
-    function checkheight(height) {
-        if (typeof height === 'number') {
-            return height >= 1.6 ? 'Wow thats big! ' : ' ';
-        } else {
-            return false;
-        }
-    }
 
 
-    //   Function to that adds a Comments based on the Pokemons type
-    function checktype(type) {
-        if (type.length === 2) {
-            return 'It has two Types !';
-        } else if (type.length === 1) {
-            return 'It has one Type !';
-        } else {
-            // In case of any Invalid "Type" Values 
-            return 'A Pokemon can only have 1 or 2 Types !';
-        }
-    }
-
-
-    // function add(pokemon) {
-    //     if (checkObject(pokemon)
-    //         && checktype(pokemon.type)
-    //         && checkheight(pokemon.height)
-    //     ) {
-    //         pokemonlist.push(pokemon)
-    //     }
-    //     else {
-    //         console.log('Invalid Input')
-    //     }
-    // }
 
     // temporary simple add function 
     function add(pokemon) {
@@ -122,11 +76,6 @@ let pokemon_reposetory = (function () {
             showDetails(pokemon);
         });
 
-
-        // document.write(`That Pokemon´s Name is ${pokemon.name}! 
-        // Its height is ${pokemon.height} m.
-        // ${checkheight(pokemon.height)} 
-        // ${checktype(pokemon.type)} <br>`)
     }
 
     // Prints Pokemon Details to the Console 
@@ -191,10 +140,3 @@ pokemon_reposetory.loadlist().then(function () {
         pokemon_reposetory.addListItem(pokemon);
     });
 });
-
-// Looping trough the Pokemonlist. 
-
-// pokemon_reposetory.getALL().forEach((pokemon) => {
-
-//     pokemon_reposetory.addListItem(pokemon);
-// });
