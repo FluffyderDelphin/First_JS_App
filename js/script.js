@@ -45,9 +45,6 @@ let pokemon_reposetory = (function () {
         })
     }
 
-
-
-
     // temporary simple add function 
     function add(pokemon) {
         pokemonlist.push(pokemon);
@@ -59,20 +56,15 @@ let pokemon_reposetory = (function () {
 
     function addListItem(pokemon) {
 
-        let ulpokemonlist = document.querySelector('.pokemon-list');
-        let listItem = document.createElement('li');
-        listItem.classList.add('list-group-item');
-        let button = document.createElement('button');
-        button.classList.add('pokemonButton');
-        button.classList.add('btn');
-        button.classList.add('btn-primary');
-        ulpokemonlist.appendChild(listItem);
-        listItem.appendChild(button);
-        button.innerText = capitalizeName(pokemon.name);
+        let ulpokemonlist = $('.pokemon-list');
+        let listItem = $('<li class="list-group-item"></li>');
+        let button = $(`<button type="button" class="btn btn-primary pokemonButton" data-toggle="modal" data-target="pokemon-odal">${pokemon.name}</button>`);
+        ulpokemonlist.append(listItem);
+        listItem.append(button);
 
         // Event Listner for the Details 
 
-        button.addEventListener('click', function () {
+        button.on('click', () => {
             showDetails(pokemon);
         });
 
@@ -82,30 +74,28 @@ let pokemon_reposetory = (function () {
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            let modal = document.querySelector(".modal-container");
-            modal.classList.remove("hidden");
-
+            let modalHeader = $('.modal-header');
 
             let pokemonName = capitalizeName(pokemon.name);
-            document.querySelector('body').classList.add('modal-open');
-            document.querySelector(".pokemon-name").innerText = pokemonName;
-            document.querySelector(".pokemon-height").innerText = pokemon.height;
-            document.querySelector(".pokemon-image").src = pokemon.imageUrl;
+            // document.querySelector('body').classList.add('modal-open');
+            // document.querySelector(".pokemon-name").innerText = pokemonName;
+            // document.querySelector(".pokemon-height").innerText = pokemon.height;
+            // document.querySelector(".pokemon-image").src = pokemon.imageUrl;
 
-            let close = document.querySelector(".modal-close");
-            close.addEventListener('click', hideDetails);
+            // let close = document.querySelector(".modal-close");
+            // close.addEventListener('click', hideDetails);
 
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    hideDetails();
-                }
-            })
+            // window.on('keydown', (e) => {
+            //     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            //         hideDetails();
+            //     }
+            // })
 
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    hideDetails();
-                }
-            })
+            // modal.addEventListener('click', (e) => {
+            //     if (e.target === modal) {
+            //         hideDetails();
+            //     }
+            // })
 
 
 
