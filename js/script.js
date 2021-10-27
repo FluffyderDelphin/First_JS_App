@@ -40,7 +40,7 @@ let pokemon_reposetory = (function () {
             item.imageFront = details.sprites.front_default;
             item.imageBack = details.sprites.back_default;
             item.height = details.height;
-            item.types = details.types;
+            item.types = details.types.map(object => object.type.name);
             item.weight = details.weight;
         }).catch(function (e) {
             console.error(e);
@@ -86,21 +86,96 @@ let pokemon_reposetory = (function () {
             modalBody.empty();
 
             modalTitle.append($(`<h2>${capitalizeName(pokemon.name)}</h2>`));
+
+            let imageContainer
+
             modalBody.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageFront}"></img>`));
             modalBody.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageBack}"></img>`));
-            modalBody.append($(`<p>Height : ${pokemon.height}</p>`));
-            modalBody.append($(`<p>Weight : ${pokemon.weight}</p>`));
-            // modalBody.append($(`<p>${pokemon.types}</p>`));
 
+            let detail_list = $('<div class="list-group detail-list"></div>')
+            modalBody.append(detail_list);
+            detail_list.append($(`<p class="list-group-item text-center border-0">Height : ${pokemon.height}</p>`));
+            detail_list.append($(`<p class="list-group-item text-center border-0">Weight : ${pokemon.weight}</p>`));
 
+            detail_list.append(prepareType(pokemon.types));
+            console.log(pokemon.types);
+
+            // pokemon.types.forEach(e => types_list.append($(`<span class="pokemon-type">${e} </span>`)));
+            // detail_list.append(types_list);
 
             console.log(pokemon);
         })
 
     }
-    function hideDetails() {
-        document.querySelector(".modal-container").classList.add("hidden");
-        document.querySelector('body').classList.remove('modal-open');
+    function prepareType(type) {
+        let types_list = $(`<p class="list-group-item text-center border-0"></p>`);
+        type.forEach(e => {
+            let type_entry = $(`<span class="pokemon-type">${e} </span>`);
+            switch (e) {
+                case "fire":
+                    type_entry.addClass(fire);
+                    break;
+                case "water":
+                    type_entry.addClass(water);
+                    break;
+                case "grass":
+                    type_entry.addClass(grass);
+                    break;
+                case "poison":
+                    type_entry.addClass(poison);
+                    break;
+                case "bug":
+                    type_entry.addClass(bug);
+                    break;
+                case "electric":
+                    type_entry.addClass(electric);
+                    break;
+                case "fire":
+                    type_entry.addClass(fire);
+                    break;
+                case "normal":
+                    type_entry.addClass(normal);
+                    break;
+                case "rock":
+                    type_entry.addClass(rock);
+                    break;
+                case "dark":
+                    type_entry.addClass(dark);
+                    break;
+                case "fairy":
+                    type_entry.addClass(fairy);
+                    break;
+                case "flying":
+                    type_entry.addClass(flying);
+                    break;
+                case "ground":
+                    type_entry.addClass(ground);
+                    break;
+                case "steel":
+                    type_entry.addClass(steel);
+                    break;
+                case "dragon":
+                    type_entry.addClass(dragon);
+                    break;
+                case "fighting":
+                    type_entry.addClass(fighting);
+                    break;
+                case "ghost":
+                    type_entry.addClass(ghost);
+                    break;
+                case "ice":
+                    type_entry.addClass(ice);
+                    break;
+                case "psychic":
+                    type_entry.addClass(psychic);
+                    break;
+                case "water":
+                    type_entry.addClass(water);
+                    break;
+            }
+        }
+        );
+        return types_list;
     }
 
     function capitalizeName(name) {

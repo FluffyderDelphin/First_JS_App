@@ -112,13 +112,10 @@ h1{
 }
 
  /* Modal Styling */
+ .detail-list{
+     margin-top: 40px;
+ }
 
-
-.detail-list {
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-}
 .detail-list li{
     padding: 8px 12px;
     border: 4px double;
@@ -134,6 +131,78 @@ body.modal-open{
     overflow: hidden;
     height: 100vh;
 }
+
+.pokemon-type{
+    padding: 7px 12px;
+    background: gray;
+    margin: 5px;
+    color: white;
+    border-radius: 10px;
+}
+
+.grass{
+    background-color: green;
+}
+.poison{
+    background-color: purple;
+}
+.bug{
+    background-color: olive;
+}
+.electric{
+    background-color: yellow;
+}
+.fire{
+    background-color: red;
+}
+.normal{
+    background-color: rgb(121, 118, 118);
+}
+.rock{
+    background-color: rgb(167, 113, 42);
+}
+.dark{
+    background-color: rgb(39, 24, 11);
+}
+.fairy{
+    background-color: pink;
+}
+.flying{
+    background-color: lightskyblue;
+}
+.ground{
+    background-color: rgb(228, 182, 129);
+}
+.steel{
+    background-color: silver;
+}
+.dragon{
+    background-color: slateblue;
+}
+.fighting{
+    background-color: brown;
+}
+.ghost{
+    background-color: rgb(73, 62, 143);
+}
+.ice{
+    background-color: rgb(47, 138, 199);
+}
+.psychic{
+    background-color: rgb(211, 57, 121);
+}
+.water{
+    background-color: rgb(51, 123, 218);
+}
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 768px) {
     .pokedex{
