@@ -87,21 +87,21 @@ let pokemon_reposetory = (function () {
 
             modalTitle.append($(`<h2>${capitalizeName(pokemon.name)}</h2>`));
 
-            let imageContainer
+            let imageContainer = $('<div class="row"></div>')
 
-            modalBody.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageFront}"></img>`));
-            modalBody.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageBack}"></img>`));
+            imageContainer.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageFront}"></img>`));
+            imageContainer.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageBack}"></img>`));
 
+            modalBody.append(imageContainer);
             let detail_list = $('<div class="list-group detail-list"></div>')
             modalBody.append(detail_list);
-            detail_list.append($(`<p class="list-group-item text-center border-0">Height : ${pokemon.height}</p>`));
-            detail_list.append($(`<p class="list-group-item text-center border-0">Weight : ${pokemon.weight}</p>`));
+            detail_list.append($(`<p class="list-group-item text-center border-0">Height : ${pokemon.height / 10} m</p>`));
+            detail_list.append($(`<p class="list-group-item text-center border-0">Weight : ${pokemon.weight / 10} kg</p>`));
 
             detail_list.append(prepareType(pokemon.types));
             console.log(pokemon.types);
 
-            // pokemon.types.forEach(e => types_list.append($(`<span class="pokemon-type">${e} </span>`)));
-            // detail_list.append(types_list);
+
 
             console.log(pokemon);
         })
@@ -110,7 +110,7 @@ let pokemon_reposetory = (function () {
     function prepareType(type) {
         let types_list = $(`<p class="list-group-item text-center border-0"></p>`);
         type.forEach(e => {
-            let type_entry = $(`<span class="pokemon-type">${e} </span>`);
+            let type_entry = $(`<span class="pokemon-type">${e.toUpperCase()} </span>`);
             types_list.append(type_entry);
             console.log(e);
             switch (e) {

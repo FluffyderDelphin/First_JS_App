@@ -30,17 +30,6 @@ h1{
     font-weight: 600;
 
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(184, 66, 66);
-    /* width: 500px; */
-
-
-  
-
-}
 
 .pokemon-list{
     /* background-color: blue; */
@@ -61,7 +50,7 @@ h1{
 
 .pokemonButton{
     font-family: 'Orbitron', sans-serif;
-    background-color: rgba(44, 34, 34, 0.404);
+    background-color: rgb(170, 91, 91);
     color: rgb(255, 230, 88);
     font-size: 1.5rem;
     border: none;
@@ -165,7 +154,7 @@ body.modal-open{
     background-color: rgb(39, 24, 11);
 }
 .fairy{
-    background-color: pink;
+    background-color: rgb(197, 82, 126);
 }
 .flying{
     background-color: lightskyblue;
