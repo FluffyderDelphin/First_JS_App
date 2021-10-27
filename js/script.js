@@ -88,8 +88,8 @@ let pokemon_reposetory = (function () {
             modalTitle.append($(`<h2>${capitalizeName(pokemon.name)}</h2>`));
             modalBody.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageFront}"></img>`));
             modalBody.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageBack}"></img>`));
-            modalBody.append($(`<p>${pokemon.height}</p>`));
-            modalBody.append($(`<p>${pokemon.weight}</p>`));
+            modalBody.append($(`<p>Height : ${pokemon.height}</p>`));
+            modalBody.append($(`<p>Weight : ${pokemon.weight}</p>`));
             // modalBody.append($(`<p>${pokemon.types}</p>`));
 
 
