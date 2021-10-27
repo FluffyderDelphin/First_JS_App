@@ -58,7 +58,9 @@ let pokemon_reposetory = (function () {
 
         let ulpokemonlist = $('.pokemon-list');
         let listItem = $('<li class="list-group-item"></li>');
-        let button = $(`<button type="button" class="btn btn-primary pokemonButton" data-toggle="modal" data-target="pokemon-odal">${pokemon.name}</button>`);
+        let button = $(`<button type="button" class="btn btn-primary pokemonButton" data-toggle="modal" data-target="#pokemonModal">
+        ${pokemon.name}
+      </button>`);
         ulpokemonlist.append(listItem);
         listItem.append(button);
 
