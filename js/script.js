@@ -111,66 +111,68 @@ let pokemon_reposetory = (function () {
         let types_list = $(`<p class="list-group-item text-center border-0"></p>`);
         type.forEach(e => {
             let type_entry = $(`<span class="pokemon-type">${e} </span>`);
+            types_list.append(type_entry);
+            console.log(e);
             switch (e) {
                 case "fire":
-                    type_entry.addClass(fire);
+                    type_entry.addClass('fire');
                     break;
                 case "water":
-                    type_entry.addClass(water);
+                    type_entry.addClass('water');
                     break;
                 case "grass":
-                    type_entry.addClass(grass);
+                    type_entry.addClass('grass');
                     break;
                 case "poison":
-                    type_entry.addClass(poison);
+                    type_entry.addClass('poison');
                     break;
                 case "bug":
-                    type_entry.addClass(bug);
+                    type_entry.addClass('bug');
                     break;
                 case "electric":
-                    type_entry.addClass(electric);
+                    type_entry.addClass('electric');
                     break;
                 case "fire":
-                    type_entry.addClass(fire);
+                    type_entry.addClass('fire');
                     break;
                 case "normal":
-                    type_entry.addClass(normal);
+                    type_entry.addClass('normal');
                     break;
                 case "rock":
-                    type_entry.addClass(rock);
+                    type_entry.addClass('rock');
                     break;
                 case "dark":
-                    type_entry.addClass(dark);
+                    type_entry.addClass('dark');
                     break;
                 case "fairy":
-                    type_entry.addClass(fairy);
+                    type_entry.addClass('fairy');
                     break;
                 case "flying":
-                    type_entry.addClass(flying);
+                    type_entry.addClass('flying');
                     break;
                 case "ground":
-                    type_entry.addClass(ground);
+                    type_entry.addClass('ground');
                     break;
                 case "steel":
-                    type_entry.addClass(steel);
+                    type_entry.addClass('steel');
                     break;
                 case "dragon":
-                    type_entry.addClass(dragon);
+                    type_entry.addClass('dragon');
                     break;
                 case "fighting":
-                    type_entry.addClass(fighting);
+                    type_entry.addClass('fighting');
                     break;
                 case "ghost":
-                    type_entry.addClass(ghost);
+                    type_entry.addClass('ghost');
                     break;
                 case "ice":
-                    type_entry.addClass(ice);
+                    type_entry.addClass('ice');
                     break;
                 case "psychic":
-                    type_entry.addClass(psychic);
+                    type_entry.addClass('psychic');
                     break;
                 case "water":
-                    type_entry.addClass(water);
+                    type_entry.addClass('water');
                     break;
             }
         }
