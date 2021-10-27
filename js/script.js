@@ -42,6 +42,7 @@ let pokemon_reposetory = (function () {
             item.height = details.height;
             item.types = details.types.map(object => object.type.name);
             item.weight = details.weight;
+            item.entry = details.id;
         }).catch(function (e) {
             console.error(e);
         })
@@ -85,9 +86,9 @@ let pokemon_reposetory = (function () {
             modalTitle.empty();
             modalBody.empty();
 
-            modalTitle.append($(`<h2>${capitalizeName(pokemon.name)}</h2>`));
+            modalTitle.append($(`<h2 class="modal-pokemon-name">#${pokemon.entry} ${capitalizeName(pokemon.name)}</h2>`));
 
-            let imageContainer = $('<div class="row"></div>')
+            let imageContainer = $('<div class="image-container"></div>')
 
             imageContainer.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageFront}"></img>`));
             imageContainer.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageBack}"></img>`));

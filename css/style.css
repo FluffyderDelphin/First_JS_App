@@ -9,19 +9,10 @@ ul{
 }
 
 body{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
     font-family: 'Roboto', sans-serif;
     
 }
 .pokedex{
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 150px;
 }
 h1{
@@ -30,31 +21,40 @@ h1{
     font-weight: 600;
 
 }
+.navbar{
+    background-color: rgb(184, 66, 66);
+    color: rgb(255, 230, 88);
+}
+.navbar-brand{
+    font-size: 30px;
+    color: rgb(255, 230, 88);
+}
+.navbar-brand:hover{
+    color: rgb(255, 230, 88);
+}
 
 .pokemon-list{
     /* background-color: blue; */
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
     margin: 10px 70px;
 }
 
 
 .pokemon-list li{
     width: 100%;
+    background-color: rgb(184, 66, 66);
   
 }
 
 
 .pokemonButton{
     font-family: 'Orbitron', sans-serif;
-    background-color: rgb(170, 91, 91);
+    background-color: rgb(141, 53, 53);
     color: rgb(255, 230, 88);
     font-size: 1.5rem;
     border: none;
     width: 100%;
+    max-width: 100%;
     padding: 12px  18px;
     margin: 20px 0;
     border-radius: 10px;
@@ -101,6 +101,13 @@ h1{
 }
 
  /* Modal Styling */
+ .modal-header{
+    background-color: rgb(184, 66, 66);
+    color: rgb(255, 230, 88);
+ }
+ .modal-pokemon-name{
+     font-size: 30px;
+ }
  .detail-list{
      margin-top: 40px;
  }
@@ -111,10 +118,15 @@ h1{
 }
 
 .pokemon-image{
-    margin-right: 40px;
     border: 4px double;
-    width: 300px;
+    width: 100%;
     max-width: 100%;
+}
+.image-container{
+    display: grid;
+    row-gap: 15px;
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr;
 }
 body.modal-open{
     overflow: hidden;
@@ -127,6 +139,8 @@ body.modal-open{
     margin: 5px;
     color: white;
     border-radius: 10px;
+    border: 2px  solid rgb(68, 68, 68);
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 .grass{
@@ -194,6 +208,9 @@ body.modal-open{
 
 
 @media only screen and (max-width: 768px) {
+    .pokemonButton{
+        font-size: 16px;
+    }
     .pokedex{
         width: 100%;
     }
@@ -230,7 +247,6 @@ body.modal-open{
     .pokemon-image{
         margin-right: 0;
         border: 4px double;
-        width: 300px;
     }
 
     .pokemon-image{
