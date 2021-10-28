@@ -244,10 +244,6 @@ body.modal-open{
         margin-right: 0;
         border: 4px double;
     }
-
-    .pokemon-image{
-        width: 250px;
-    }
 }
 
 @media only screen 
