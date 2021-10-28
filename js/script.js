@@ -37,62 +37,16 @@ let pokemon_reposetory = (function () {
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function (details) {
-            item.imageUrl = details.sprites.front_default;
+            item.imageFront = details.sprites.front_default;
+            item.imageBack = details.sprites.back_default;
             item.height = details.height;
-            item.types = details.types;
+            item.types = details.types.map(object => object.type.name);
+            item.weight = details.weight;
+            item.entry = details.id;
         }).catch(function (e) {
             console.error(e);
         })
     }
-
-    //  Functions Checks if Pokemon Object is valid
-    function checkObject(pkobj) {
-        if (typeof pkobj === 'object'
-            && Object.keys(pkobj).includes('name')
-            && Object.keys(pkobj).includes('type')
-            && Object.keys(pkobj).includes('height')
-        ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    //   Function to that adds a Comments based on the Pokemons height
-
-    function checkheight(height) {
-        if (typeof height === 'number') {
-            return height >= 1.6 ? 'Wow thats big! ' : ' ';
-        } else {
-            return false;
-        }
-    }
-
-
-    //   Function to that adds a Comments based on the Pokemons type
-    function checktype(type) {
-        if (type.length === 2) {
-            return 'It has two Types !';
-        } else if (type.length === 1) {
-            return 'It has one Type !';
-        } else {
-            // In case of any Invalid "Type" Values 
-            return 'A Pokemon can only have 1 or 2 Types !';
-        }
-    }
-
-
-    // function add(pokemon) {
-    //     if (checkObject(pokemon)
-    //         && checktype(pokemon.type)
-    //         && checkheight(pokemon.height)
-    //     ) {
-    //         pokemonlist.push(pokemon)
-    //     }
-    //     else {
-    //         console.log('Invalid Input')
-    //     }
-    // }
 
     // temporary simple add function 
     function add(pokemon) {
@@ -105,55 +59,47 @@ let pokemon_reposetory = (function () {
 
     function addListItem(pokemon) {
 
-        let ulpokemonlist = document.querySelector('.pokemon-list');
-        let listItem = document.createElement('li');
-        let button = document.createElement('button');
-        button.classList.add('pokemonButton');
-        ulpokemonlist.appendChild(listItem);
-        listItem.appendChild(button);
-        button.innerText = capitalizeName(pokemon.name);
+        let ulpokemonlist = $('.pokemon-list');
+        let listItem = $('<li class="list-group-item"></li>');
+        let button = $(`<button type="button" class="btn btn-warning pokemonButton" data-toggle="modal" data-target="#pokemonModal">
+        ${capitalizeName(pokemon.name)}
+      </button>`);
+        ulpokemonlist.append(listItem);
+        listItem.append(button);
 
         // Event Listner for the Details 
 
-        button.addEventListener('click', function () {
+        button.on('click', () => {
             showDetails(pokemon);
         });
 
-
-        // document.write(`That Pokemon´s Name is ${pokemon.name}! 
-        // Its height is ${pokemon.height} m.
-        // ${checkheight(pokemon.height)} 
-        // ${checktype(pokemon.type)} <br>`)
     }
 
     // Prints Pokemon Details to the Console 
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            let modal = document.querySelector(".modal-container");
-            modal.classList.remove("hidden");
+            let modalHeader = $('.modal-header');
+            let modalBody = $('.modal-body');
+            let modalTitle = $('.modal-title');
 
+            modalTitle.empty();
+            modalBody.empty();
 
-            let pokemonName = capitalizeName(pokemon.name);
-            document.querySelector('body').classList.add('modal-open');
-            document.querySelector(".pokemon-name").innerText = pokemonName;
-            document.querySelector(".pokemon-height").innerText = pokemon.height;
-            document.querySelector(".pokemon-image").src = pokemon.imageUrl;
+            modalTitle.append($(`<h2 class="modal-pokemon-name">#${pokemon.entry} ${capitalizeName(pokemon.name)}</h2>`));
 
-            let close = document.querySelector(".modal-close");
-            close.addEventListener('click', hideDetails);
+            let imageContainer = $('<div class="image-container"></div>')
 
-            window.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    hideDetails();
-                }
-            })
+            imageContainer.append($(`<img class="pokemon-image img-fluid" alt="image of ${pokemon.name} from the Front" src="${pokemon.imageFront}"></img>`));
+            imageContainer.append($(`<img class="pokemon-image img-fluid" alt="image of ${pokemon.name} from the Back" src="${pokemon.imageBack}"></img>`));
 
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    hideDetails();
-                }
-            })
+            modalBody.append(imageContainer);
+            let detail_list = $('<div class="list-group detail-list"></div>')
+            modalBody.append(detail_list);
+            detail_list.append($(`<p class="list-group-item text-center border-0 sr-only-focusable">Height : ${pokemon.height / 10} m</p>`));
+            detail_list.append($(`<p class="list-group-item text-center border-0 sr-only-focusable">Weight : ${pokemon.weight / 10} kg</p>`));
+
+            detail_list.append(prepareType(pokemon.types));
 
 
 
@@ -161,9 +107,78 @@ let pokemon_reposetory = (function () {
         })
 
     }
-    function hideDetails() {
-        document.querySelector(".modal-container").classList.add("hidden");
-        document.querySelector('body').classList.remove('modal-open');
+
+    // Function that changes Background Color on the Type based on the Name
+    function prepareType(type) {
+        let types_list = $(`<p class="list-group-item text-center border-0"></p>`);
+        type.forEach(e => {
+            let type_entry = $(`<span class="pokemon-type">${e.toUpperCase()} </span>`);
+            types_list.append(type_entry);
+            switch (e) {
+                case "fire":
+                    type_entry.addClass('fire');
+                    break;
+                case "water":
+                    type_entry.addClass('water');
+                    break;
+                case "grass":
+                    type_entry.addClass('grass');
+                    break;
+                case "poison":
+                    type_entry.addClass('poison');
+                    break;
+                case "bug":
+                    type_entry.addClass('bug');
+                    break;
+                case "electric":
+                    type_entry.addClass('electric');
+                    break;
+                case "fire":
+                    type_entry.addClass('fire');
+                    break;
+                case "normal":
+                    type_entry.addClass('normal');
+                    break;
+                case "rock":
+                    type_entry.addClass('rock');
+                    break;
+                case "dark":
+                    type_entry.addClass('dark');
+                    break;
+                case "fairy":
+                    type_entry.addClass('fairy');
+                    break;
+                case "flying":
+                    type_entry.addClass('flying');
+                    break;
+                case "ground":
+                    type_entry.addClass('ground');
+                    break;
+                case "steel":
+                    type_entry.addClass('steel');
+                    break;
+                case "dragon":
+                    type_entry.addClass('dragon');
+                    break;
+                case "fighting":
+                    type_entry.addClass('fighting');
+                    break;
+                case "ghost":
+                    type_entry.addClass('ghost');
+                    break;
+                case "ice":
+                    type_entry.addClass('ice');
+                    break;
+                case "psychic":
+                    type_entry.addClass('psychic');
+                    break;
+                case "water":
+                    type_entry.addClass('water');
+                    break;
+            }
+        }
+        );
+        return types_list;
     }
 
     function capitalizeName(name) {
@@ -188,10 +203,3 @@ pokemon_reposetory.loadlist().then(function () {
         pokemon_reposetory.addListItem(pokemon);
     });
 });
-
-// Looping trough the Pokemonlist. 
-
-// pokemon_reposetory.getALL().forEach((pokemon) => {
-
-//     pokemon_reposetory.addListItem(pokemon);
-// });
