@@ -90,14 +90,14 @@ let pokemon_reposetory = (function () {
 
             let imageContainer = $('<div class="image-container"></div>')
 
-            imageContainer.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageFront}"></img>`));
-            imageContainer.append($(`<img class="pokemon-image img-fluid" src="${pokemon.imageBack}"></img>`));
+            imageContainer.append($(`<img class="pokemon-image img-fluid" alt="image of ${pokemon.name} from the Front" src="${pokemon.imageFront}"></img>`));
+            imageContainer.append($(`<img class="pokemon-image img-fluid" alt="image of ${pokemon.name} from the Back" src="${pokemon.imageBack}"></img>`));
 
             modalBody.append(imageContainer);
             let detail_list = $('<div class="list-group detail-list"></div>')
             modalBody.append(detail_list);
-            detail_list.append($(`<p class="list-group-item text-center border-0">Height : ${pokemon.height / 10} m</p>`));
-            detail_list.append($(`<p class="list-group-item text-center border-0">Weight : ${pokemon.weight / 10} kg</p>`));
+            detail_list.append($(`<p class="list-group-item text-center border-0 sr-only-focusable">Height : ${pokemon.height / 10} m</p>`));
+            detail_list.append($(`<p class="list-group-item text-center border-0 sr-only-focusable">Weight : ${pokemon.weight / 10} kg</p>`));
 
             detail_list.append(prepareType(pokemon.types));
 
