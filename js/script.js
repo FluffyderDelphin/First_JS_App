@@ -100,7 +100,6 @@ let pokemon_reposetory = (function () {
             detail_list.append($(`<p class="list-group-item text-center border-0">Weight : ${pokemon.weight / 10} kg</p>`));
 
             detail_list.append(prepareType(pokemon.types));
-            console.log(pokemon.types);
 
 
 
@@ -113,7 +112,6 @@ let pokemon_reposetory = (function () {
         type.forEach(e => {
             let type_entry = $(`<span class="pokemon-type">${e.toUpperCase()} </span>`);
             types_list.append(type_entry);
-            console.log(e);
             switch (e) {
                 case "fire":
                     type_entry.addClass('fire');
