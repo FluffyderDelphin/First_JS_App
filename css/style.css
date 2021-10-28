@@ -141,6 +141,7 @@ body.modal-open{
     border-radius: 10px;
     border: 2px  solid rgb(68, 68, 68);
     text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    display: inline-block;
 }
 
 .grass{
@@ -222,14 +223,9 @@ body.modal-open{
       padding: 0;
     }
 
-
-    .modal-content{
-        margin: 0;
-        width: 80%;
-        overflow:scroll;
-        
+    .pokemon-list{
+        margin: 10px 20px;
     }
-
     .modal-details{
         flex-direction: column;
         align-items: center;

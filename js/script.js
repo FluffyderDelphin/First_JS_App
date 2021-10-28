@@ -107,6 +107,8 @@ let pokemon_reposetory = (function () {
         })
 
     }
+
+    // Function that changes Background Color on the Type based on the Name
     function prepareType(type) {
         let types_list = $(`<p class="list-group-item text-center border-0"></p>`);
         type.forEach(e => {
