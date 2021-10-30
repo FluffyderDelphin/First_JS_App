@@ -1,4 +1,4 @@
-# First_JS_App
+# My First Js App: A Pokedex Project
 
 ![Page Screenshot](images/page_screenshot.png)
 
@@ -6,8 +6,8 @@ My first Javascript Project, wich takes data from an Api and display it on a htm
 
 Specicly Pokemon names get Displayed in a List and clicking on them opend a Modal, wich Display Additional Detail about that "Pokemon".
 
-Build with
+<h2>Build with<h2>
 
--html,css,javascript
--jqeury +Boostrap
--Pokemon Api https://pokeapi.co/
+*html,css,javascript
+*jqeury +Boostrap
+*Pokemon Api https://pokeapi.co/
