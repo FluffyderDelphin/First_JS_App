@@ -1,4 +1,4 @@
-# First_JS_App
+# My First Js App: A Pokedex Project
 
 My first Javascript Project, wich takes data from an Api and display it on a html page.
 
