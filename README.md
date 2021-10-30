@@ -8,6 +8,6 @@ Specicly Pokemon names get Displayed in a List and clicking on them opend a Moda
 
 <h2>Build with<h2>
 
-*html,css,javascript
-*jqeury +Boostrap
-*Pokemon Api https://pokeapi.co/
+-html,css,javascript
+-jqeury +Boostrap
+-Pokemon Api https://pokeapi.co/
