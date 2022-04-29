@@ -14,9 +14,7 @@ Specicly Pokemon names get Displayed in a List and clicking on them opend a Moda
 -jqeury +Boostrap
 -Pokemon Api https://pokeapi.co/
 
-*html,css,javascript
-*jqeury +Boostrap
-*Pokemon Api https://pokeapi.co/
+
   
 #How to use
 
