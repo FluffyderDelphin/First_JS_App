@@ -1,5 +1,6 @@
 # My First Js App: A Pokedex Project
-My first Javascript Project, wich takes data from an Api and display it on a html page.
+My first Javascript Project,  wich simply takes data from an Api and Displays the Information on the List.
+Details are then Displayed in a Modal after clicking on a Name.
 
 Gh Pages link : https://fluffyderdelphin.github.io/First_JS_App/
 
