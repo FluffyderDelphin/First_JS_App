@@ -7,16 +7,19 @@ My first Javascript Project, wich takes data from an Api and display it on a htm
 
 Specicly Pokemon names get Displayed in a List and clicking on them opend a Modal, wich Display Additional Detail about that "Pokemon".
 
-#Build with
+# Build with
 
 
--html,css,javascript
--jqeury +Boostrap
--Pokemon Api https://pokeapi.co/
+- html
+ -css
+ - vanilla javascript
+- jqeury 
+- Boostrap
+- Pokemon Api https://pokeapi.co/
 
 
   
-#How to use
+# How to use
 
 Simply Click a Name of your Choice on the List and a Modal will Apear, Displaying aditional Details about
 the Pokemon with that Name. 
