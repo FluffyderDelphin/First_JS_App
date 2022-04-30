@@ -26,8 +26,8 @@ Specicly Pokemon names get Displayed in a List and clicking on them opend a Moda
   
 # How to use
 
-Simply Click a Name of your Choice on the List and a Modal will Apear, Displaying aditional Details about
-the Pokemon with that Name. 
+Simply Click a Name of your Choice on the List and a Modal will apear.
+The Modal displays Aditional Information taken form the Api, sorted by the Name you clicked.
 To close the Modal, you can either prass the X Button,click outside of the Modal, or press Esc on the Keyboard.
 
 
