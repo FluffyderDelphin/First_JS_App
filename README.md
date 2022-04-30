@@ -13,7 +13,7 @@ Specicly Pokemon names get Displayed in a List and clicking on them opend a Moda
 
 
 - html
- -css
+- css
  - vanilla javascript
 - jqeury 
 - Boostrap
