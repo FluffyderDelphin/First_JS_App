@@ -1,7 +1,9 @@
 # My First Js App: A Pokedex Project
 My first Javascript Project, wich takes data from an Api and display it on a html page.
 
-![Page Screenshot](images/page_screenshot.png)
+
+
+<img src="images/page_screenshot.png" alt="Screenshot" width="400"/>
 
 
 
