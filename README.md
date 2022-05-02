@@ -18,8 +18,9 @@ Specicly Pokemon names get Displayed in a List and clicking on them opend a Moda
 - html
 - css
  - vanilla javascript
+ - Asynchronous Code(Promises and Fetch API)
 - jqeury 
-- Boostrap
+- Bootrap
 - Pokemon Api https://pokeapi.co/
 
 
