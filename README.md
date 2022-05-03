@@ -20,7 +20,7 @@ Specicly Pokemon names get Displayed in a List and clicking on them opend a Moda
  - vanilla javascript
  - Asynchronous Code(Promises and Fetch API)
 - jqeury 
-- Bootrap
+- Bootstrap
 - Pokemon Api https://pokeapi.co/
 
 
